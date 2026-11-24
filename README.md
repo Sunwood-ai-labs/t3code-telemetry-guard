@@ -75,12 +75,13 @@ WSL の `~/.bashrc` / `~/.zshrc` にも同じ環境変数を追記したい場�
 
 - Windows 10 / 11（Windows PowerShell 5.1 / PowerShell 7+ 対応）
 
-## 関連・代替プロジェクト（Rust 再実装・クライアント・パッチ）
+## 関連・代替プロジェクト（ゼロテレメトリフォーク・Rust 再実装・クライアント）
 
-公式の T3 Code（[`pingdotgg/t3code`](https://github.com/pingdotgg/t3code)）以外で、コミュニティによる Rust 再実装・軽量クライアント・テレメトリ対策パッチも公開されています（いずれも非公式・2026-11-25 時点で一次確認済み）。
+公式の T3 Code（[`pingdotgg/t3code`](https://github.com/pingdotgg/t3code)）以外で、テレメトリをコードから完全削除したフォークや、コミュニティによる Rust 再実装・軽量クライアント・パッチも公開されています（いずれも非公式・2026-11-25 時点で一次確認済み）。
 
 | プロジェクト | 種類 | 主な対応環境 | リンク | 特徴・補足 |
 |---|---|---|---|---|
+| **M3 Code** | ゼロテレメトリフォーク | Windows / macOS / Linux | [MiaAI-Lab/m3code](https://github.com/MiaAI-Lab/m3code) | PostHog・Axiom・OTLP・`ingest.t3.codes`・`distinct_id` などの識別収集を**無効化ではなくコードから完全削除**。外部通信一覧も公開 |
 | **Ferrum**（旧 `t3code-rust`） | サーバー（Rust 再実装） | Linux / macOS | [ttulttul/Ferrum](https://github.com/ttulttul/Ferrum) | `t3 serve` と単独リレーのドロップイン置き換えを目指す高パリティ Rust 実装（起動・省メモリ面で大幅高速化） |
 | **R3 Code** | ネイティブクライアント + Rust サーバー | macOS 13.5+（Apple Silicon） | [jasonkneen/r3code](https://github.com/jasonkneen/r3code) / [公式サイト](https://jasonkneen.github.io/r3code/) | GPUI + NativeShell (NSH) ベースのネイティブ Mac 版。Beta 0.1.10 配布中・ソース公開済み |
 | **t3term** | TUI クライアント（Rust） | ターミナル（単一バイナリ約 5.4MB） | [krishhgg/t3term](https://github.com/krishhgg/t3term) | Electron アプリの代わりに既存 T3 サーバーへ接続して操作できる軽量 TUI / CLI（MIT） |
